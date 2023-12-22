@@ -1,24 +1,43 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## studentsテーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                  |
+| ------------------ | ------- | ------------------------ |
+| email              | string  | null: false, unique:true |
+| encrypted_password | string  | null: false              | 
+| gender_id          | integer | null: false              |
+| last_name          | string  | null: false              |
+| first_name         | string  | null: false              |
+| last_name_kana     | string  | null: false              |
+| first_name_kana    | string  | null: false              |
+| school             | string  | null: false              |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :tests
 
-* Configuration
 
-* Database creation
+## testsテーブル
 
-* Database initialization
+| Column                    | Type       | Options                       |
+| ------------------------- | ---------- | ----------------------------- |
+| grade_id                  | integer    | null: false                   |
+| test_name_id              | integer    | null: false                   |
+| japanese_score            | integer    |                               |
+| japanese_average_score    | integer    |                               |
+| mathematics_score         | integer    |                               |
+| mathematics_average_score | integer    |                               |
+| english_score             | integer    |                               |
+| english_average_score     | integer    |                               |
+| sosial_score              | integer    |                               |
+| sosial_average_score      | integer    |                               |
+| science_score             | integer    |                               |
+| science_average_score     | integer    |                               |
+| total_score               | integer    |                               |
+| rank                      | integer    |                               |
+| student                   | references | null: false foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- belongs_to :student
