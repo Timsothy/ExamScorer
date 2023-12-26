@@ -1,6 +1,6 @@
   <div class='student'>
     <% if student_signed_in? %>
-        <%= link_to "#{current_student.last_name}#{current_student.first_name}", student_path(current_student), class: "nav" %>
+        <%= link_to "#{current_student.last_name}#{current_student.first_name}", class: "nav" %>
         <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "nav" %>
     <% else %>
         <%= link_to '生徒登録', new_student_registration_path, class: "nav" %>
