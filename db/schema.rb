@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_22_124014) do
+ActiveRecord::Schema.define(version: 2023_12_27_012135) do
+
+  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "grade_id", null: false
+    t.integer "exam_name_id", null: false
+    t.integer "japanese_score"
+    t.integer "japanese_average_score"
+    t.integer "mathematics_score"
+    t.integer "mathematics_average_score"
+    t.integer "english_score"
+    t.integer "english_average_score"
+    t.integer "sosial_score"
+    t.integer "sosial_average_score"
+    t.integer "science_score"
+    t.integer "science_average_score"
+    t.integer "total_score"
+    t.integer "rank"
+    t.bigint "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_exams_on_student_id"
+  end
 
   create_table "genders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -30,4 +51,5 @@ ActiveRecord::Schema.define(version: 2023_12_22_124014) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "exams", "students"
 end

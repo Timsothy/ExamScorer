@@ -1,3 +1,24 @@
+<div class='exams-index'>
   <div class='sidebar'>
     <%= render 'shared/sidebar' %>
   </div>
+  <div class='exams-main'>
+    <table>
+      <tr>
+        <th>学年</th><th>テスト</th><th>５教科合計</th><th>順位</th>
+      </tr>
+      <% @exams.each do |exam| %>
+        <tr>
+          <td><%= exam.grade.name %></td>
+          <td><%= exam.exam_name.name %></td>
+          <td><%= exam.total_score %></td>
+          <td><%= exam.rank %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= link_to(new_exam_path, class: "exam-btn") do %>
+      <span class="exam-btn-text">新規テスト</span>
+      <%= image_tag 'plus-icon.png' , size: '180x50' ,class: "exam-btn-icon" %>
+    <% end %>
+  </div>
+</div>

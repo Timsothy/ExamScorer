@@ -3,7 +3,7 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
-  has_many :tests
+  has_many :exams
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
 

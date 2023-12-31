@@ -1,0 +1,77 @@
+<div class='new-exams'>
+  <div class='sidebar'>
+    <%= render 'shared/sidebar' %>
+  </div>
+  <div class='new-exams-main'>
+    <h2 class="exams-title">テストの結果を入力</h2>
+    <%= form_with model: @exam, local:true do |form| %>
+
+    <%= render 'shared/error_messages', model: form.object %>
+
+    <div class='register-new-exams'>
+      <div class="weight-bold-text">
+        学年
+        <span class="indispensable">必須</span>
+      </div>
+      <%= form.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box"}) %>
+      <div class="weight-bold-text">
+        テスト名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= form.collection_select(:exam_name_id, ExamName.all, :id, :name, {}, {class:"select-box"}) %>
+      <div class="weight-bold-text">
+        国語(得点)
+      </div>
+      <%= form.text_field :japanese_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        国語(平均点)
+      </div>
+      <%= form.text_field :japanese_average_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        数学(得点)
+      </div>
+      <%= form.text_field :mathematics_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        数学(平均点)
+      </div>
+      <%= form.text_field :mathematics_average_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        英語(得点)
+      </div>
+      <%= form.text_field :english_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        英語(平均点)
+      </div>
+      <%= form.text_field :english_average_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        社会(得点)
+      </div>
+      <%= form.text_field :sosial_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        社会(平均点)
+      </div>
+      <%= form.text_field :sosial_average_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        理科(得点)
+      </div>
+      <%= form.text_field :science_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        理科(平均点)
+      </div>
+      <%= form.text_field :science_average_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        合計点(5科)
+      </div>
+      <%= form.text_field :total_score, class:"exams-text" %>
+      <div class="weight-bold-text">
+        順位
+      </div>
+      <%= form.text_field :rank, class:"exams-text" %>
+    </div>
+    <div class="registration-btn-contents">
+      <%= form.submit "登録する" ,class:"registration-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>

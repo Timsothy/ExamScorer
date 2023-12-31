@@ -18,12 +18,12 @@
 - has_many :tests
 
 
-## testsテーブル
+## examsテーブル
 
 | Column                    | Type       | Options                       |
 | ------------------------- | ---------- | ----------------------------- |
 | grade_id                  | integer    | null: false                   |
-| test_name_id              | integer    | null: false                   |
+| exam_name_id              | integer    | null: false                   |
 | japanese_score            | integer    |                               |
 | japanese_average_score    | integer    |                               |
 | mathematics_score         | integer    |                               |

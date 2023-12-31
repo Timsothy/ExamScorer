@@ -1,0 +1,36 @@
+.exams-index {
+  display: flex;
+}
+
+.exams-main {
+  width: calc(100vw - 200px);
+  padding: 50px;
+}
+
+.exams-main a {
+  text-decoration: none;
+}
+
+/* 表 */
+
+table {
+  width: 70%;
+  min-width: 500px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table th {
+  border: solid 1px black;
+  padding: 10px;
+  background-color: #0F4E6E;
+  color: #FFFFFF;
+}
+
+table td {
+  border: solid 1px black;
+  padding: 10px;
+}
+
+/* 表 */
