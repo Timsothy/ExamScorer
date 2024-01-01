@@ -1,0 +1,31 @@
+.option {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 30px 0px;
+}
+
+.edit-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  color: black;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.delete-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  padding: 1vh 0;
+  color: white;
+  background-color: #ea352d;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

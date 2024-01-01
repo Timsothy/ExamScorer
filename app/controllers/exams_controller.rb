@@ -4,6 +4,10 @@ class ExamsController < ApplicationController
     @exams = Exam.order('created_at DESC')
   end
 
+  def show
+    @exam = Exam.find(params[:id])
+  end
+
   def new
     @exam = Exam.new
   end

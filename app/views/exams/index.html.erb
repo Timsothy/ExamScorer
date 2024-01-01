@@ -1,4 +1,4 @@
-<div class='exams-index'>
+<div class='exams'>
   <div class='sidebar'>
     <%= render 'shared/sidebar' %>
   </div>
@@ -10,7 +10,9 @@
       <% @exams.each do |exam| %>
         <tr>
           <td><%= exam.grade.name %></td>
-          <td><%= exam.exam_name.name %></td>
+          <td>
+          <%= link_to "#{exam.exam_name.name}", exam_path(exam.id) %>
+          </td>
           <td><%= exam.total_score %></td>
           <td><%= exam.rank %></td>
         </tr>
