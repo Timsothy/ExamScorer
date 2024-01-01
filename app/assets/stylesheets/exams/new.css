@@ -1,8 +1,8 @@
-.new-exams {
+.exams {
   display: flex;
 }
 
-.new-exams-main{
+.register-exams-main{
   width: 70vw;
   padding: 10vh 15vw;
 }

@@ -3,7 +3,7 @@
     <%= render 'shared/sidebar' %>
   </div>
   <div class='register-exams-main'>
-    <h2 class="exams-title">テストの結果を入力</h2>
+    <h2 class="exams-title">テストの結果を編集</h2>
     <%= form_with model: @exam, local:true do |form| %>
 
     <%= render 'shared/error_messages', model: form.object %>
@@ -69,8 +69,8 @@
       <%= form.text_field :rank, class:"exams-text" %>
     </div>
     <div class="registration-btn-contents">
-      <%= form.submit "登録する" ,class:"registration-btn" %>
-      <%= link_to 'もどる', root_path, class:"back-btn" %>
+      <%= form.submit "編集する" ,class:"registration-btn" %>
+      <%= link_to 'もどる', exam_path(@exam), class:"back-btn" %>
     </div>
     <% end %>
   </div>

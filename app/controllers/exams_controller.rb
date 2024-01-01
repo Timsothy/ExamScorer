@@ -1,11 +1,12 @@
 class ExamsController < ApplicationController
   before_action :authenticate_student!, except: [:index]
+  before_action :set_exam, only: [:show, :edit, :update]
+
   def index
     @exams = Exam.order('created_at DESC')
   end
 
   def show
-    @exam = Exam.find(params[:id])
   end
 
   def new
@@ -21,6 +22,17 @@ class ExamsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @exam.update(exam_params)
+      redirect_to exam_path(@exam)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def exam_params
@@ -31,5 +43,9 @@ class ExamsController < ApplicationController
                                  :sosial_score, :sosial_average_score,
                                  :science_score, :science_average_score,
                                  :total_score, :rank).merge(student_id: current_student.id)
+  end
+
+  def set_exam
+    @exam = Exam.find(params[:id])
   end
 end
