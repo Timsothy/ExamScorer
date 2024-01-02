@@ -1,6 +1,6 @@
 class ExamsController < ApplicationController
   before_action :authenticate_student!, except: [:index]
-  before_action :set_exam, only: [:show, :edit, :update]
+  before_action :set_exam, only: [:show, :edit, :update, :destroy]
 
   def index
     @exams = Exam.order('created_at DESC')
@@ -31,6 +31,11 @@ class ExamsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @exam.destroy
+    redirect_to root_path
   end
 
   private
