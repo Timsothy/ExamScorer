@@ -5,7 +5,9 @@
 }
 
 .nav {
-  margin: 3vh;
+  margin-top: 1vh;
+  margin-left: 3vw;
+  display: inline-block;
 }
 
 .student a {
